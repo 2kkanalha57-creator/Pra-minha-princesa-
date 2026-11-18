@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para o meu amor ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffb6c9, #ffe4ec, #ffc5d9);
+  font-family: Georgia, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.card {
+  background: rgba(255,255,255,.93);
+  max-width: 430px;
+  width: 100%;
+  padding: 30px 24px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 35px #b84b7540;
+  z-index: 2;
+}
+
+.heart {
+  font-size: 65px;
+  animation: pulse 1.5s infinite;
+}
+
+h1 {
+  color: #d6336c;
+  margin: 18px 0;
+}
+
+p {
+  color: #704454;
+  line-height: 1.8;
+  margin: 15px 0;
+}
+
+button {
+  background: #e75480;
+  color: white;
+  border: none;
+  padding: 15px 22px;
+  border-radius: 30px;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+#surpresa {
+  display: none;
+  background: #fff0f5;
+  color: #c72c60;
+  padding: 18px;
+  margin-top: 20px;
+  border-radius: 15px;
+  line-height: 1.8;
+}
+
+.flutuante {
+  position: fixed;
+  bottom: -40px;
+  animation: subir 7s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.15); }
+}
+
+@keyframes subir {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="heart">❤️</div>
+
+  <h1>Para a minha princesa!</h1>
+
+  <p>
+    Meu amor, soube que você machucou seu
+    joelhinho e preparei uma surpresa para você.
+  </p>
+
+  <p>
+    Sei que não é nada legal sentir dor,
+    mas quero que você tenha paciência,
+    descanse e cuide bastante de si mesma.
+  </p>
+
+  <p>
+    Você merece todo carinho e amor
+    desse mundo. Nunca se esqueça
+    do quanto é especial para mim! 💗
+  </p>
+
+  <button onclick="abrirSurpresa()">
+    Abra sua surpresa 💌
+  </button>
+
+  <div id="surpresa">
+    <h2>Uma cartinha para você 🌷</h2>
+
+    Se eu pudesse, tiraria toda essa dor
+    e colocaria um sorriso no seu rosto.
+
+    Quero que saiba que estarei sempre
+    torcendo pela sua felicidade.
+
+    Não tenha pressa para melhorar.
+    Cuide de você, minha princesa!
+
+    <br><br>
+
+    <strong>Eu te amo muito! ❤️</strong>
+
+    <br><br>
+
+    Com carinho, do seu amor. 💗
+  </div>
+</div>
+
+<script>
+function abrirSurpresa() {
+  document.getElementById("surpresa").style.display = "block";
+}
+
+function criarCoracao() {
+  const coracao = document.createElement("div");
+  coracao.className = "flutuante";
+  coracao.textContent = "❤️";
+  coracao.style.left = Math.random() * 100 + "vw";
+  coracao.style.fontSize = (15 + Math.random() * 20) + "px";
+  coracao.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+  document.body.appendChild(coracao);
+
+  setTimeout(() => coracao.remove(), 10000);
+}
+
+setInterval(criarCoracao, 700);
+</script>
+
+</body>
+</html>
